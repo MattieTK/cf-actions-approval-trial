@@ -1,0 +1,12 @@
+# Records the order of workflow_job webhooks for a job held by a required reviewer.
+name: Gated
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gated:
+    runs-on: ubuntu-latest
+    environment: gated
+    steps:
+      - run: echo "approved and running at $(date -u +%H:%M:%S)"
